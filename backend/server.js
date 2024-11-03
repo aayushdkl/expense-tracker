@@ -1,11 +1,11 @@
 const express = require("express")
 const app = express()
 app.use(express.json())
-
+const cors = require("cors")
 const expenseRoutes = require("./routes/expenseRoutes")
 const connectDB = require("./config/db")
 connectDB()
-
+app.use(cors())
 const dotenv = require("dotenv")
 dotenv.config()
 
